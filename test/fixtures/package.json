@@ -1,0 +1,16 @@
+{
+  "name": "test-pkg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/npm/index.js",
+  "jsnext:main": "src/js/index.js",
+  "scripts": {
+    "version": "sb-release"
+  },
+  "author": "Brandon Casey",
+  "license": "MIT",
+  "devDependencies": {
+    "sb": "*"
+  },
+  "browserify-shim": "node_modules/sb/config/shim.config.js"
+}

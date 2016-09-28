@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+var path = require('path');
+var config = require('./utils/get-config')();
+var RunCommand = require('./utils/run-command');
+var GetPath = require('./utils/get-path');
+
+var program = require('commander')
+  .version(config.sbVersion)
+  .option('-w, --watch', 'watch docs for changes and rebuild')
+  .parse(process.argv);
+
+var commands = [
+  GetPath('sb-build-docs-api'),
+  GetPath('sb-build-docs-manual')
+];
+commands.forEach(function(command) {
+  RunCommand('exec', command, {async: true});
+});
